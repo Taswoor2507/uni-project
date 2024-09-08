@@ -27,3 +27,13 @@ connectDB()
 .catch((err)=>{
     console.log("Error connecting to database : ", err)
 })
+// import express from "express";
+// const app = express();
+
+
+// app.get("/api/v1/tree/all", (req, res) => {
+//   res.send("Hello from Vite.js Server!");
+// });
+// app.listen(3030, function(){
+//   console.log("done")
+// })

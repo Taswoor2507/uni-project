@@ -1,6 +1,10 @@
 import AsyncHandler from "../utils/asyncHandler.js";
 import QrCode from 'qrcode';
 import Tree from "../models/tree.model.js";
+
+
+
+
 const addTree = AsyncHandler(async (req, res, next) => {
   try {
     const { treeName, treeType, wateringSchedule, diseases, age, uses } = req.body;
@@ -72,4 +76,6 @@ const getAllTrees = AsyncHandler(async(req,res,next)=>{
     }
 })
 
-export { addTree , getTree  , getAllTrees};
+export { addTree , getTree  , getAllTrees };
+
+

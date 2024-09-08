@@ -1,5 +1,5 @@
 import express from 'express'
-import { addTree, getAllTrees, getTree } from '../controllers/tree.controller.js';
+import { addTree, getAllTrees,  getTree } from '../controllers/tree.controller.js';
 const router = express.Router();
 
 router.route("/tree/create").post(addTree)
