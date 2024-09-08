@@ -31,7 +31,7 @@ import express from "express";
 const app = express();
 
 
-app.get("/api/v1/tree/all", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello from Vite.js Server!");
 });
 app.listen(3030, function(){
