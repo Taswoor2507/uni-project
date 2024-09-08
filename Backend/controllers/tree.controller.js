@@ -35,7 +35,7 @@ const addTree = AsyncHandler(async (req, res, next) => {
     });
 
     // Generate QR code
-    const qrCode = await QrCode.toDataURL(newTree._id.toString());
+    const qrCode = await QrCode.toDataURL(`http://localhost/5173/${newTree._id}`);
     
     // Set the qrCode field
     newTree.qrCode = qrCode;
@@ -49,4 +49,27 @@ const addTree = AsyncHandler(async (req, res, next) => {
   }
 });
 
-export { addTree };
+
+const getTree =  AsyncHandler(async(req,res,next)=>{
+    try {
+        const tree = await Tree.findById(req.params.id)
+        if(!tree){
+            return res.status(404).json({message:"Tree not found"})
+        }
+        res.json(tree)
+    } catch (error) {
+        next(error)
+    }
+})
+
+
+const getAllTrees = AsyncHandler(async(req,res,next)=>{
+    try {
+        const trees = await Tree.find({})
+        res.json(trees)
+    } catch (error) {
+        next(error)
+    }
+})
+
+export { addTree , getTree  , getAllTrees};
